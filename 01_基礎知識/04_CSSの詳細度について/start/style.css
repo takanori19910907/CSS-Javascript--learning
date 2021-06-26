@@ -1,0 +1,19 @@
+.parent {
+  color: blue;
+}
+
+span {
+  color: purple;
+}
+
+.cls {
+  color: #000;
+}
+
+#id {
+  color: green
+}
+
+.parent span {
+  color: red;
+}
