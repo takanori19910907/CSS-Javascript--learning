@@ -1,1 +1,98 @@
-@import 'mixin';
+@import "mixin";
+
+body {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+
+  // インライン要素に使用出来る位置調整プロパティ。
+  // div,imgの2つの要素を重ねた時に、ずれている基準位置を下辺に合わせて修正する
+  vertical-align: bottom;
+}
+
+.cover-slide {
+  position: relative;
+  // hover時に画像を拡大させると要素がはみ出るため、はみ出た部分を隠す
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    // after疑似要素を親要素と同じ大きさで展開
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(43, 21, 1);
+    z-index: 2;
+  }
+
+  // inviewクラスがafterについた時だけ kf-cover-slide2 アニメーションを発火させる
+  &.inview {
+    &::after {
+      @include animation($name: kf-cover-slide2, $duration: 1.6s);
+    }
+  }
+}
+
+@keyframes kf-cover-slide2 {
+  0% {
+    left: 0;
+    right: 100%;
+  }
+
+  50% {
+    left: 0;
+    right: 0;
+  }
+
+  100% {
+    left: 100%;
+    right: 0;
+  }
+}
+
+.img-zoom {
+  // 初期画面に画像を表示させないため
+  opacity: 0;
+
+  // inviewクラスがafterについた時だけ、その直下のimg-zoomにimage-show2 アニメーションを発火させる
+  .inview & {
+    //  アニメーション終了後も画像を表示させるため
+    opacity: 1;
+    //  hover時のzoom処理をコントロール
+    transition: transform 0.3s ease;
+
+    
+    @include animation(
+      $name: image-show2,
+      $duration: 1.6s,
+      $timing-function: ease-in-out,
+      $fill-mode: none
+    );
+    &:hover {
+      transform: scale(1.3);
+    }
+  }
+}
+
+@keyframes image-show2 {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  50.1% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

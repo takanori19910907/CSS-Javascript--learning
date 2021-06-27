@@ -1,1 +1,137 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+body {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+.cover-slide {
+  position: relative;
+  overflow: hidden;
+}
+
+.cover-slide::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #2b1501;
+  z-index: 2;
+}
+
+.cover-slide.inview::after {
+  -webkit-animation-name: kf-cover-slide2;
+          animation-name: kf-cover-slide2;
+  -webkit-animation-duration: 1.6s;
+          animation-duration: 1.6s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes kf-cover-slide2 {
+  0% {
+    left: 0;
+    right: 100%;
+  }
+  50% {
+    left: 0;
+    right: 0;
+  }
+  100% {
+    left: 100%;
+    right: 0;
+  }
+}
+
+@keyframes kf-cover-slide2 {
+  0% {
+    left: 0;
+    right: 100%;
+  }
+  50% {
+    left: 0;
+    right: 0;
+  }
+  100% {
+    left: 100%;
+    right: 0;
+  }
+}
+
+.img-zoom {
+  opacity: 0;
+}
+
+.inview .img-zoom {
+  opacity: 1;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  -webkit-animation-name: image-show2;
+          animation-name: image-show2;
+  -webkit-animation-duration: 1.6s;
+          animation-duration: 1.6s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-direction: normal;
+          animation-direction: normal;
+  -webkit-animation-fill-mode: none;
+          animation-fill-mode: none;
+}
+
+.inview .img-zoom:hover {
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
+}
+
+@-webkit-keyframes image-show2 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  50.1% {
+    opacity: 1;
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes image-show2 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  50.1% {
+    opacity: 1;
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=style.css.map */
