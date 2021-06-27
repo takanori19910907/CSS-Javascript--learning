@@ -1,0 +1,43 @@
+$cBlack: black;
+$cWhite: white;
+
+.mobile-menu-icon {
+  background-color: transparent;
+  border: none;
+  outline: none !important;
+  cursor: pointer;
+
+  & > span {
+    background-color: $cBlack;
+    height: 2px;
+    width: 35px;
+    display: block;
+    margin-bottom: 9px;
+    transition: 1s;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.menu-open {
+  background-color: $cBlack;
+
+  & .mobile-menu-icon {
+      & > span {
+        background-color: $cWhite;
+        &:nth-child(1) {
+          transform: translateY(11px) rotate(135deg);
+        }
+
+        &:nth-child(2) {
+          background-color: transparent;
+        }
+
+        &:nth-child(3) {
+          transform: translateY(-11px) rotate(-135deg);
+        }
+      }
+  }
+}
