@@ -1,1 +1,43 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+.mobile-menu-icon {
+  background-color: transparent;
+  border: none;
+  outline: none !important;
+  cursor: pointer;
+}
+
+.mobile-menu-icon > span {
+  background-color: black;
+  height: 2px;
+  width: 35px;
+  display: block;
+  margin-bottom: 9px;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.mobile-menu-icon > span:last-child {
+  margin-bottom: 0;
+}
+
+.menu-open {
+  background-color: black;
+}
+
+.menu-open .mobile-menu-icon > span {
+  background-color: white;
+}
+
+.menu-open .mobile-menu-icon > span:nth-child(1) {
+  -webkit-transform: translateY(11px) rotate(135deg);
+          transform: translateY(11px) rotate(135deg);
+}
+
+.menu-open .mobile-menu-icon > span:nth-child(2) {
+  background-color: transparent;
+}
+
+.menu-open .mobile-menu-icon > span:nth-child(3) {
+  -webkit-transform: translateY(-11px) rotate(-135deg);
+          transform: translateY(-11px) rotate(-135deg);
+}
+/*# sourceMappingURL=style.css.map */
