@@ -1,15 +1,15 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const ta = new TweenTextAnimation('.tween-animate-title');
+    const ta = new TextAnimation('.animate-title');
     ta.animate();
 });
 
 
 class TextAnimation {
     constructor(el) {
-        this.DOM = {};
-        this.DOM.el = document.querySelector(el);
-        this.chars = this.DOM.el.innerHTML.trim().split("");
-        this.DOM.el.innerHTML = this._splitText();
+      this.DOM = {};
+      this.DOM.el = document.querySelector(el);
+      this.chars = this.DOM.el.innerHTML.trim().split("");
+      this.DOM.el.innerHTML = this._splitText();
     }
     _splitText() {
         return this.chars.reduce((acc, curr) => {
